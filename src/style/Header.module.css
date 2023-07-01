@@ -1,0 +1,14 @@
+/* Module SASS styling for navbar (header) */
+.head {
+  height: 6% !important;
+  z-index: 1;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-image: linear-gradient(to right, white, transparent, white) 1;
+}
+.head .logo {
+  font-weight: 500;
+  font-family: cursive;
+}
+
+/*# sourceMappingURL=Header.module.css.map */

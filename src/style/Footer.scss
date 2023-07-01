@@ -1,0 +1,44 @@
+/* Module SASS styling for footer */
+
+@use 'vars';
+
+#sticky {
+    background-color: rgb(vars.$bgcolor2);
+    height: 6% !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-top-width: 2px;
+    border-top-style: solid;
+    border-image: linear-gradient(to right, vars.$maincolor, transparent, vars.$maincolor) 1;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .txt,
+    .copyright {
+        font-size: 0.9em;
+        padding-bottom: 0.5px;
+    }
+
+    .txt {
+        @extend %link-template;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-image: linear-gradient(to right, transparent, transparent, transparent) 1;
+
+        &:hover {
+            transform: scale(1.075);
+            border-image: linear-gradient(to right, transparent, vars.$maincolor, transparent) 1;
+        }
+    }
+
+    .link {
+        color: vars.$maincolor;
+        cursor: pointer;
+        text-decoration: none;
+    }
+}

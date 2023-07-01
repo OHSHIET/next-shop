@@ -1,0 +1,14 @@
+/* Module SASS styling for main page content */
+
+@use 'vars';
+
+.content {
+    height: 88% !important;
+    width: 100%;
+    position: absolute;
+    color: vars.$maincolor;
+
+    .container {
+        padding-left: 0 !important;
+    }
+}

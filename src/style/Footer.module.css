@@ -1,0 +1,42 @@
+.flex .txt {
+  transition: all 0.3s ease-in;
+}
+
+/* Module SASS styling for footer */
+#sticky {
+  background-color: rgb(var(--bs-dark-rgb));
+  height: 6% !important;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-image: linear-gradient(to right, white, transparent, white) 1;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.flex .txt,
+.flex .copyright {
+  font-size: 0.9em;
+  padding-bottom: 0.5px;
+}
+.flex .txt {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-image: linear-gradient(to right, transparent, transparent, transparent) 1;
+}
+.flex .txt:hover {
+  transform: scale(1.075);
+  border-image: linear-gradient(to right, transparent, white, transparent) 1;
+}
+.flex .link {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=Footer.module.css.map */

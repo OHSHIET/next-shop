@@ -1,0 +1,12 @@
+/* Module SASS styling for main page content */
+.content {
+  height: 88% !important;
+  width: 100%;
+  position: absolute;
+  color: white;
+}
+.content .container {
+  padding-left: 0 !important;
+}
+
+/*# sourceMappingURL=MainContent.module.css.map */
