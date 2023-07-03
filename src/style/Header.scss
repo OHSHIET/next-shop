@@ -1,16 +1,21 @@
 /* Module SASS styling for navbar (header) */
-
+@use "sass:map";
 @use 'vars';
 
 .head {
-    height: 6% !important;
+    height: map.get(vars.$heights, "Header") !important;
     z-index: 1;
     border-bottom-width: 2px;
     border-bottom-style: solid;
     border-image: linear-gradient(to right, vars.$maincolor, transparent, vars.$maincolor) 1;
+    color: vars.$maincolor;
 
-    .logo {
-        font-weight: 500;
-        font-family: cursive;
+    .brand {
+        font-family: 'Exo 2', sans-serif !important;
+    }
+
+    .login {
+        margin-right: 22px;
+        font-size: 16px;
     }
 }

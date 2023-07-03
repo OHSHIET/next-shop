@@ -5,10 +5,14 @@
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-image: linear-gradient(to right, white, transparent, white) 1;
+  color: white;
 }
-.head .logo {
-  font-weight: 500;
-  font-family: cursive;
+.head .brand {
+  font-family: "Exo 2", sans-serif !important;
+}
+.head .login {
+  margin-right: 22px;
+  font-size: 16px;
 }
 
 /*# sourceMappingURL=Header.module.css.map */

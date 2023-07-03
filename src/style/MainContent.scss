@@ -1,9 +1,10 @@
 /* Module SASS styling for main page content */
 
+@use "sass:map";
 @use 'vars';
 
 .content {
-    height: 88% !important;
+    height: map.get(vars.$heights, "MainContent") !important;
     width: 100%;
     position: absolute;
     color: vars.$maincolor;

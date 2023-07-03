@@ -1,10 +1,10 @@
 /* Module SASS styling for footer */
-
+@use "sass:map";
 @use 'vars';
 
 #sticky {
     background-color: rgb(vars.$bgcolor2);
-    height: 6% !important;
+    height: map.get(vars.$heights, "Footer") !important;
     display: flex;
     justify-content: center;
     flex-direction: column;

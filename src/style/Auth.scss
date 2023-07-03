@@ -1,0 +1,39 @@
+/* Module SASS styling for authentication (login/register) */
+
+@use 'sass:map';
+@use 'vars';
+
+.auth {
+    height: map.get(vars.$heights, "MainContent");
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    color: vars.$maincolor;
+}
+
+.auth_insider {
+    display: flex;
+    height: calc(map.get(vars.$heights, "MainContent") - 1%);
+    width: 100%;
+    justify-content: center;
+
+    .heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .header {
+            font-family: 'Exo 2', sans-serif !important;
+            font-size: 58px;
+        }
+
+        .underHeader {
+            color: #efefefab;
+        }
+    }
+
+    .form {
+        
+    }
+}

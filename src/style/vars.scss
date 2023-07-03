@@ -3,6 +3,12 @@ $maincolor: white;
 $bgcolor: #464646;
 $bgcolor2: var(--bs-dark-rgb);
 
+$heights: (
+    "Header": 6%,
+    "MainContent": 88%,
+    "Footer": 6%,
+);
+
 %link-template {
     transition: all 0.3s ease-in;
 }
