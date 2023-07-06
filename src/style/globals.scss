@@ -35,3 +35,20 @@ a:not(.nav-link):not(.dropdown-item) {
     text-shadow: 0 0 7px;
   }
 }
+
+.login-forms {
+  margin-top: 5px;
+}
+
+#login-page-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+  align-items: center;
+
+  #login-page-err {
+    max-width: 75%;
+  }
+}

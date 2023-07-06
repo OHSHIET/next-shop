@@ -3,6 +3,13 @@
 @use 'sass:map';
 @use 'vars';
 
+.back {
+    width: 100%;
+    background: rgb(vars.$bgcolor2);
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
 .auth {
     height: map.get(vars.$heights, "MainContent");
     width: 100%;
@@ -14,9 +21,10 @@
 
 .auth_insider {
     display: flex;
-    height: calc(map.get(vars.$heights, "MainContent") - 1%);
-    width: 100%;
+    width: 50%;
     justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
 
     .heading {
         display: flex;
@@ -26,6 +34,7 @@
         .header {
             font-family: 'Exo 2', sans-serif !important;
             font-size: 58px;
+            text-shadow: -3px 3px 5px black;
         }
 
         .underHeader {
@@ -34,6 +43,7 @@
     }
 
     .form {
-        
+        width: 70%;
+        margin: 0 auto;
     }
 }

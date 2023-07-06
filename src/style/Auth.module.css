@@ -1,4 +1,11 @@
 /* Module SASS styling for authentication (login/register) */
+.back {
+  width: 100%;
+  background: rgb(var(--bs-dark-rgb));
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
 .auth {
   height: 88%;
   width: 100%;
@@ -10,9 +17,10 @@
 
 .auth_insider {
   display: flex;
-  height: 87%;
-  width: 100%;
+  width: 50%;
   justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
 }
 .auth_insider .heading {
   display: flex;
@@ -22,9 +30,14 @@
 .auth_insider .heading .header {
   font-family: "Exo 2", sans-serif !important;
   font-size: 58px;
+  text-shadow: -3px 3px 5px black;
 }
 .auth_insider .heading .underHeader {
   color: rgba(239, 239, 239, 0.6705882353);
+}
+.auth_insider .form {
+  width: 70%;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=Auth.module.css.map */

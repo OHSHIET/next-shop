@@ -32,4 +32,20 @@ a:not(.nav-link):not(.dropdown-item):hover {
   text-shadow: 0 0 7px;
 }
 
+.login-forms {
+  margin-top: 5px;
+}
+
+#login-page-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+  align-items: center;
+}
+#login-page-flex #login-page-err {
+  max-width: 75%;
+}
+
 /*# sourceMappingURL=globals.css.map */
