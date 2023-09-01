@@ -1,11 +1,5 @@
+/* @media breakpoint that is similar across multiple sass files */
 /* Module SASS styling for authentication (login/register) */
-.back {
-  width: 100%;
-  background: rgb(var(--bs-dark-rgb));
-  padding: 10px 20px;
-  font-size: 20px;
-}
-
 .auth {
   height: 88%;
   width: 100%;

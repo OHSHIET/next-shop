@@ -1,9 +1,0 @@
-/* Module SASS styling for products */
-
-@use 'vars';
-
-.products {
-    padding: vars.$sidebar-padding;
-    padding-right: calc(vars.$sidebar-padding - 12px);
-    /* 12px = container-fluid padding to the right of the box */
-}

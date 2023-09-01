@@ -35,7 +35,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/types/**/*.tsx",
-    /* "src/app/components/*.jsx", */
+    "src/app/components/*.jsx",
     "prisma/db.server.ts"
   ],
   "exclude": [

@@ -1,0 +1,47 @@
+@use 'vars';
+
+%admin-page {
+    margin: 50px auto;
+}
+
+%header {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 42px;
+}
+
+%admin-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.unauthorized {
+    @extend %admin-page;
+    @extend %header;
+    @extend %admin-flex;
+}
+
+.admin {
+    @extend %admin-page;
+    @extend %admin-flex;
+
+    .header {
+        @extend %header;
+        @extend %admin-flex;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .subheader {
+        font-size: 17px;
+        color: vars.$subheaderColor;
+    }
+
+    .admin-form {
+        width: 35%;
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+    }
+}

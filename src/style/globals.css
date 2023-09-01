@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap");
-a:not(.nav-link):not(.dropdown-item) {
+/* @media breakpoint that is similar across multiple sass files */
+a:not(.nav-link):not(.dropdown-item):not(.btn) {
   transition: all 0.3s ease-in;
 }
 
@@ -12,7 +13,8 @@ body {
   background-color: #464646 !important;
   height: 100%;
   width: 100%;
-  color: white;
+  color: white !important;
+  overflow: hidden;
 }
 
 * {
@@ -23,12 +25,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-a:not(.nav-link):not(.dropdown-item) {
+a:not(.nav-link):not(.dropdown-item):not(.btn) {
   color: white;
   text-decoration: none;
   text-shadow: 0 0 3px;
 }
-a:not(.nav-link):not(.dropdown-item):hover {
+a:not(.nav-link):not(.dropdown-item):not(.btn):hover {
   text-shadow: 0 0 7px;
 }
 

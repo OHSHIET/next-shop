@@ -24,8 +24,11 @@ export const authOptions: NextAuthOptions = {
                 console.log(credentials)
                 
                 if(!credentials?.username || !credentials.password){
-                    console.log('Password or username is missing')
                     throw new Error('Password or username is missing')
+                }
+
+                else if(credentials.username.length >= 32 || credentials.password.length >= 32){
+                    throw new Error('Password or username is too long')
                 }
 
                 const user = await prisma.user.findUnique({

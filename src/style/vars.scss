@@ -2,6 +2,10 @@ $sidebar-padding: 15px;
 $maincolor: white;
 $bgcolor: #464646;
 $bgcolor2: var(--bs-dark-rgb);
+$subheaderColor: #efefefab;
+
+/* @media breakpoint that is similar across multiple sass files */
+$breakpoint-media: 570px;
 
 $heights: (
     "Header": 6%,

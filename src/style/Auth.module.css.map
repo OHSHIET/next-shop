@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["Auth.scss","vars.scss"],"names":[],"mappings":"AAAA;AAKA;EACI;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;EACA;EACA;EACA,OCjBQ;;;ADoBZ;EACI;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;;AAEA;EACI;EACA;EACA;;AAGJ;EACI;;AAIR;EACI;EACA","file":"Auth.module.css"}
+{"version":3,"sourceRoot":"","sources":["vars.scss","Auth.scss"],"names":[],"mappings":"AAMA;ACNA;AAKA;EACI;EACA;EACA;EACA;EACA;EACA,ODVQ;;;ACaZ;EACI;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;;AAEA;EACI;EACA;EACA;;AAGJ;EACI,OD7BK;;ACiCb;EACI;EACA","file":"Auth.module.css"}

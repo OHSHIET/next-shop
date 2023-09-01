@@ -3,13 +3,6 @@
 @use 'sass:map';
 @use 'vars';
 
-.back {
-    width: 100%;
-    background: rgb(vars.$bgcolor2);
-    padding: 10px 20px;
-    font-size: 20px;
-}
-
 .auth {
     height: map.get(vars.$heights, "MainContent");
     width: 100%;
@@ -38,7 +31,7 @@
         }
 
         .underHeader {
-            color: #efefefab;
+            color: vars.$subheaderColor;
         }
     }
 

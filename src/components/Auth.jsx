@@ -1,12 +1,10 @@
-import styles from '../style/Auth.module.css'
-import Link from 'next/link'
+import styles from '@/style/Auth.module.css'
+import Back from './Back'
 
 export default function Auth(props) {
     return (
         <>
-            <div className={styles.back}>
-                <Link href="/">&lt; Back</Link>
-            </div>
+            <Back />
             <div className={styles.auth}>
                 <div className={styles.auth_insider}>
                     <div className={styles.heading}>

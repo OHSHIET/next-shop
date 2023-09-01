@@ -2,6 +2,13 @@
 @use "sass:map";
 @use 'vars';
 
+
+@media (max-width: vars.$breakpoint-media) {
+    .head {
+        padding: 3px 0 !important;
+    }
+}
+
 .head {
     height: map.get(vars.$heights, "Header") !important;
     z-index: 1;

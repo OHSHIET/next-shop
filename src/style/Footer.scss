@@ -2,6 +2,14 @@
 @use "sass:map";
 @use 'vars';
 
+@media (max-width: vars.$breakpoint-media) {
+    #sticky {
+        padding-top: 15px !important;
+        padding-bottom: 15px !important;
+        font-size: 13px !important;
+    }
+}
+
 #sticky {
     background-color: rgb(vars.$bgcolor2);
     height: map.get(vars.$heights, "Footer") !important;

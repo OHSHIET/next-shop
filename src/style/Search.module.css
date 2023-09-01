@@ -1,0 +1,8 @@
+/* @media breakpoint that is similar across multiple sass files */
+.search {
+  padding: 25px 40px;
+  font-size: 30px;
+  font-family: "Exo 2", sans-serif;
+}
+
+/*# sourceMappingURL=Search.module.css.map */

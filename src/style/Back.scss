@@ -1,0 +1,9 @@
+@use 'vars';
+
+.back {
+    width: 100%;
+    background: rgb(vars.$bgcolor2);
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: 'Exo 2', sans-serif;
+}

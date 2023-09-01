@@ -1,10 +1,12 @@
-import styles from '../style/Header.module.css';
+import styles from '@/style/Header.module.css';
 import Link from 'next/link';
 
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "../app/api/auth/[...nextauth]/route"
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
+
 
 export default async function Header() {
 
@@ -20,8 +22,14 @@ export default async function Header() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                            {
+                                (session?.user?.name === 'superuser') &&
+                                <li className="nav-item">
+                                    <Link className="nav-link" href="/admin">Admin</Link>
+                                </li>
+                            }
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Link</a>
+                                <Link className="nav-link" href="/cart">Cart</Link>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,11 +54,11 @@ export default async function Header() {
                             </>
                             :
                             <div className={styles.login}>
-                               <Link href="/login">Log in</Link>
+                                <Link href="/login">Log in</Link>
                             </div>
                         }
-                        <form className="d-flex" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Find something..." aria-label="Search" />
+                        <form className="d-flex" role="search" action='/search' method='GET'>
+                            <input className="form-control me-2" autoComplete='off' type="search" name='q' placeholder="Find something..." aria-label="Search" />
                             <button className="btn btn-outline-light" type="submit">Search</button>
                         </form>
                     </div>

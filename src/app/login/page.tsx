@@ -1,6 +1,6 @@
 "use client"
 
-import Auth from '../../components/Auth.jsx'
+import Auth from '@/components/Auth.jsx'
 import { FormEvent } from 'react'
 import { signIn } from 'next-auth/react'
 import { useSearchParams } from 'next/navigation'
@@ -22,10 +22,10 @@ export default async function Login() {
 
     return (
         <Auth>
-            <form onSubmit={submitted}>
+            <form onSubmit={submitted} autoComplete='off'>
                 <div className="form-group login-forms">
                     <label htmlFor="username-input">Username</label>
-                    <input type="text" className="form-control" name="username" id="username-input" autoComplete='false' placeholder="Enter username" />
+                    <input type="text" className="form-control" name="username" id="username-input" placeholder="Enter username" />
                 </div>
                 <div className="form-group login-forms">
                     <label htmlFor="password-input">Password</label>

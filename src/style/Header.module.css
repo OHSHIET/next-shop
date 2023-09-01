@@ -1,4 +1,10 @@
 /* Module SASS styling for navbar (header) */
+/* @media breakpoint that is similar across multiple sass files */
+@media (max-width: 570px) {
+  .head {
+    padding: 3px 0 !important;
+  }
+}
 .head {
   height: 6% !important;
   z-index: 1;

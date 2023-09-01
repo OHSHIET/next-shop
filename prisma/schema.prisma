@@ -11,4 +11,13 @@ model User {
   id            String    @id @default(cuid())
   name          String    @unique
   password      String
+  // shopping cart
+}
+
+model Product {
+  id            String    @id @default(cuid())
+  name          String    @unique
+  img           String
+  desc          String
+  category      String
 }

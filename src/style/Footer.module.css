@@ -1,8 +1,16 @@
+/* @media breakpoint that is similar across multiple sass files */
 .flex .txt {
   transition: all 0.3s ease-in;
 }
 
 /* Module SASS styling for footer */
+@media (max-width: 570px) {
+  #sticky {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    font-size: 13px !important;
+  }
+}
 #sticky {
   background-color: rgb(var(--bs-dark-rgb));
   height: 6% !important;

@@ -1,0 +1,32 @@
+/* @media breakpoint that is similar across multiple sass files */
+.admin, .unauthorized {
+  margin: 50px auto;
+}
+
+.admin .header, .unauthorized {
+  font-family: "Exo 2", sans-serif;
+  font-size: 42px;
+}
+
+.admin .header, .admin, .unauthorized {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin .header {
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.admin .subheader {
+  font-size: 17px;
+  color: rgba(239, 239, 239, 0.6705882353);
+}
+.admin .admin-form {
+  width: 35%;
+}
+.admin .admin-form .form-group {
+  margin-bottom: 10px;
+}
+
+/*# sourceMappingURL=admin.css.map */

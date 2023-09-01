@@ -13,7 +13,8 @@ body {
   background-color: vars.$bgcolor !important;
   height: 100%;
   width: 100%;
-  color: vars.$maincolor;
+  color: vars.$maincolor !important;
+  overflow: hidden;
 }
 
 * {
@@ -25,7 +26,7 @@ code {
     monospace;
 }
 
-a:not(.nav-link):not(.dropdown-item) {
+a:not(.nav-link):not(.dropdown-item):not(.btn) {
   @extend %link-template;
   color: vars.$maincolor;
   text-decoration: none;
