@@ -21,7 +21,6 @@ export const authOptions: NextAuthOptions = {
                 }
             },
             async authorize(credentials) {
-                console.log(credentials)
                 
                 if(!credentials?.username || !credentials.password){
                     throw new Error('Password or username is missing')

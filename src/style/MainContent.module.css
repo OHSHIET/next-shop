@@ -1,5 +1,5 @@
+/* Module SASS styling for main page content (products + sidebar) */
 /* @media breakpoint that is similar across multiple sass files */
-/* Module SASS styling for main page content */
 @media (max-width: 980px) {
   .productcard {
     width: 10rem !important;
@@ -23,7 +23,7 @@
     width: 66.6666666667% !important;
   }
 }
-.loading, .content {
+.loading, .loading100, .loading88, .content {
   height: 88%;
   position: absolute;
 }
@@ -61,32 +61,35 @@
   padding-left: 7px;
   font-size: 16px;
 }
-.content .productscol {
+
+.productscol {
   height: 100%;
 }
-.content .products {
+
+.products {
   padding: 15px;
   padding-right: 3px;
   /* 12px = container-fluid padding to the right of the box */
   overflow: auto;
-  height: 100%; /* calc(map.get(vars.$heights, "MainContent") - 16%); */
+  height: 100%;
+  /* calc(map.get(vars.$heights, "MainContent") - 16%); */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: flex-start;
 }
-.content .products .productcard {
+.products .productcard {
   margin-left: 25px;
   margin-bottom: 25px;
   width: 15rem;
 }
-.content .products .productcardbody {
+.products .productcardbody {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.content .products .cardflex {
+.products .cardflex {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -96,13 +99,20 @@
   color: white;
 }
 
-.loading {
-  width: 88%;
+.loading, .loading100, .loading88 {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 52px;
   font-family: "Exo 2", sans-serif;
+}
+
+.loading88 {
+  width: 88%;
+}
+
+.loading100 {
+  width: 100%;
 }
 
 /*# sourceMappingURL=MainContent.module.css.map */

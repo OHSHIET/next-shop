@@ -14,7 +14,6 @@ export default function Search() {
     const findProducts = async () => {
         const response = await fetch(`/api/findProducts?q=${query}`)
         const data = await response.json()
-        console.log(data)
         if(!data.ok){
             setFound(() => data.message)
         }

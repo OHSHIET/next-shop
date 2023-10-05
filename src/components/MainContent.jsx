@@ -1,10 +1,10 @@
 "use client"
 
-import React, { useEffect, useState } from 'react';
-import styles from '@/style/MainContent.module.css';
-import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
+import styles from '@/style/MainContent.module.css'
+import Products from '@/components/Products'
 
-export default function MainContent() {
+export default function MainContent(props) {
 
     // mainProducts for storing info about all products
     // products will change depending on the filter
@@ -12,10 +12,17 @@ export default function MainContent() {
     const [products, setProducts] = useState()
     const [mainProducts, setMainProducts] = useState()
     const [currentCategory, setCurrentCategory] = useState('all_products')
+    const [err, setErr] = useState(false)
+    const [errMsg, setErrMsg] = useState()
 
     const makeRequest = async () => {
         const response = await fetch('/api/getProducts')
         const data = await response.json()
+        if(!data.ok){
+            setErr(() => true)
+            setErrMsg(() => data.message)
+            return
+        }
         setMainProducts(() => data.products)
         setProducts(() => data.products)
     }
@@ -33,7 +40,6 @@ export default function MainContent() {
     }
 
     function Sidebar() {
-
         let categories = []
 
         return (
@@ -49,6 +55,7 @@ export default function MainContent() {
                                 </label>
                             </div>
                             {
+                            
                                 mainProducts.map((product) => {
                                     const category = product.category
                                     if (!categories.includes(category)) {
@@ -73,33 +80,6 @@ export default function MainContent() {
         )
     }
 
-
-    function Products() {
-        return (
-            <div className={styles.products}>
-                {
-                    (products) ?
-                    (products.map((product) => {
-                        return (
-                            <div key={product.name} className={`card ${styles.productcard}`}>
-                                <img src={product.img} className="card-img-top" alt="Product image" />
-                                <div className={`card-body ${styles.productcardbody}`}>
-                                    <h5 className="card-title">{product.name}</h5>
-                                    <p className="card-text">{product.desc}</p>
-                                    <div className={styles.cardflex}>
-                                        <Link href={`/cart?name=${product.name}`} className="btn btn-primary">Add to cart</Link>
-                                        <div>{product.category}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        )
-                    }))
-                    : <Loading />
-                }
-            </div>
-        )
-    }
-
     function Main() {
         return (
             <div className={styles.content}>
@@ -109,22 +89,13 @@ export default function MainContent() {
                             <Sidebar />
                         </div>
                         <div className={`col-10 text-center ${styles.productscol}`}>
-                            <Products />
+                            <Products currentCategory={currentCategory} products={products} setProducts={setProducts} mainProducts={mainProducts} setMainProducts={setMainProducts} isCart={false} err={err} errMsg={errMsg} />
                         </div>
                     </div>
                 </div>
             </div>
         )
     }
-
-    function Loading() {
-        return (
-            <div className={styles.loading}>
-                Loading . . .
-            </div>
-        )
-    }
-
 
     return (
         <main>

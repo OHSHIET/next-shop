@@ -5,7 +5,7 @@ import { FormEvent } from 'react'
 import { signIn } from 'next-auth/react'
 import { useSearchParams } from 'next/navigation'
 
-export default async function Login() {
+export default function Login() {
 
     const searchParams = useSearchParams()
     const errorMsg = searchParams.get('error')

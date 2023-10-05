@@ -28,9 +28,12 @@ export default async function Header() {
                                     <Link className="nav-link" href="/admin">Admin</Link>
                                 </li>
                             }
-                            <li className="nav-item">
-                                <Link className="nav-link" href="/cart">Cart</Link>
-                            </li>
+                            {
+                                (session) &&
+                                <li className="nav-item">
+                                    <Link className="nav-link" href="/cart">Cart</Link>
+                                </li>
+                            }
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dropdown
