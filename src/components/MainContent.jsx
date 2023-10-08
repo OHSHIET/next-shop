@@ -89,7 +89,7 @@ export default function MainContent(props) {
                             <Sidebar />
                         </div>
                         <div className={`col-10 text-center ${styles.productscol}`}>
-                            <Products currentCategory={currentCategory} products={products} setProducts={setProducts} mainProducts={mainProducts} setMainProducts={setMainProducts} isCart={false} err={err} errMsg={errMsg} />
+                            <Products currentCategory={currentCategory} products={products} setProducts={setProducts} mainProducts={mainProducts} setMainProducts={setMainProducts} isSearch={false} isCart={false} err={err} errMsg={errMsg} />
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import Products from '@/components/Products'
+import styles from '@/style/MainContent.module.css'
 import { useRouter } from 'next/navigation'
 
 export default function Cart() {
@@ -35,6 +36,10 @@ export default function Cart() {
     }, [])
 
     return (
-        <Products products={cart} isCart={true} err={err} errMsg={errMsg} />
+        <div className={styles.content}>
+            <div className={`${styles.container} container-fluid`}>
+                <Products products={cart} isCart={true} isSearch={false} err={err} errMsg={errMsg} />
+            </div>
+        </div>
     )
 }

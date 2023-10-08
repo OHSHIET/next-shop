@@ -6,7 +6,9 @@ export default function SearchPage() {
     return (
         <>
             <Header />
-            <Search />
+            <div style={{overflow: 'auto'}}>
+                <Search />
+            </div>
             <Footer />
         </>
     )

@@ -23,7 +23,7 @@
     width: 66.6666666667% !important;
   }
 }
-.loading, .loading100, .loading88, .content {
+.contentSearch, .loading, .loading100, .loading88, .content {
   height: 88%;
   position: absolute;
 }
@@ -113,6 +113,15 @@
 
 .loading100 {
   width: 100%;
+}
+
+.contentSearch {
+  width: 100%;
+}
+
+.containerSearch {
+  padding-left: 0 !important;
+  height: 88% !important;
 }
 
 /*# sourceMappingURL=MainContent.module.css.map */

@@ -135,3 +135,13 @@
     @extend .loading;
     width: 100%;
 }
+
+.contentSearch {
+    @extend %main;
+    width: 100%;
+}
+
+.containerSearch {
+    padding-left: 0 !important;
+    height: map.get(vars.$heights, "MainContent") !important;
+}

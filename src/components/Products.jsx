@@ -6,6 +6,7 @@ import Loading from '@/components/Loading'
 
 import { useSession } from "next-auth/react"
 
+
 export default function Products(props) {
 
     const { data: session, status } = useSession()
@@ -21,6 +22,7 @@ export default function Products(props) {
     const setMainProducts = props.setMainProducts
     const currentCategory = props.currentCategory
 
+    const isSearch = props.isSearch
     const isCart = props.isCart
     const loadingStyles = (isCart) ? "loading100" : "loading88"
 
@@ -39,44 +41,46 @@ export default function Products(props) {
             })
         })
         const data = await response.json()
-        if (data.ok) {
-            switch (action) {
-                case 'add':
-                    e.target.setAttribute('data-action', 'remove')
-                    e.target.innerHTML = "Remove from cart"
-                    e.target.classList.remove('btn-primary')
-                    e.target.classList.add('btn-secondary')
-                    if (!isCart) {
-                        setMainProducts((prevProducts) => {
-                            prevProducts.find((product) => data.product.id === product.id).Users.push({ name: data.username })
-                            return prevProducts // modified version
-                        })
-                    }
-                    break
-                case 'remove':
-                    e.target.setAttribute('data-action', 'add')
-                    e.target.innerHTML = "Add to cart"
-                    e.target.classList.remove('btn-secondary')
-                    e.target.classList.add('btn-primary')
-                    if (!isCart) {
-                        setProducts((prevProducts) => {
-                            const gprod = prevProducts.map((item) =>
-                                data.product.id === item.id ? { ...item, Users: item.Users.filter((user) => user.name !== data.username) } : item
-                            )
-                            setMainProducts((prevProducts) => {
-                                if (currentCategory === 'all_products')
-                                    return gprod
-                                const mapper = prevProducts.map((prod) =>
-                                    gprod.find(prd => prd.id === prod.id) || prod
-                                )
-                                return mapper
-                            })
-                            return gprod
-                        })
-                    }
-                    break
-            }
+        if (!data.ok) {
+            console.log(data.message)
         }
+        switch (action) {
+            case 'add':
+                e.target.setAttribute('data-action', 'remove')
+                e.target.innerHTML = "Remove from cart"
+                e.target.classList.remove('btn-primary')
+                e.target.classList.add('btn-secondary')
+                if (!isCart) {
+                    setMainProducts((prevProducts) => {
+                        prevProducts.find((product) => data.product.id === product.id).Users.push({ name: data.username })
+                        return prevProducts // modified version
+                    })
+                }
+                break
+            case 'remove':
+                e.target.setAttribute('data-action', 'add')
+                e.target.innerHTML = "Add to cart"
+                e.target.classList.remove('btn-secondary')
+                e.target.classList.add('btn-primary')
+                if (!isCart) {
+                    setProducts((prevProducts) => {
+                        const gprod = prevProducts.map((item) =>
+                            data.product.id === item.id ? { ...item, Users: item.Users.filter((user) => user.name !== data.username) } : item
+                        )
+                        setMainProducts((prevProducts) => {
+                            if (currentCategory === 'all_products')
+                                return gprod
+                            const mapper = prevProducts.map((prod) =>
+                                gprod.find(prd => prd.id === prod.id) || prod
+                            )
+                            return mapper
+                        })
+                        return gprod
+                    })
+                }
+                break
+        }
+
     }
 
     return (
@@ -86,7 +90,7 @@ export default function Products(props) {
                     (!products.length) ? <Loading styles={loadingStyles} txt={`There are no products ${(isCart) ? "in your cart!" : "to display"}`} /> :
                         (products.map((product) => {
                             const cartRemoveElem = <button className="btn btn-secondary" data-name={product.name} data-action="remove" onClick={changeCart}>Remove from cart</button>
-                            const mappedUsers = (!isCart) ? product?.Users?.map(user => user.name) : null
+                            const mappedUsers = (!isCart || isSearch) ? product?.Users?.map(user => user.name) : null
                             return (
                                 <div key={product.name} className={`card ${styles.productcard}`}>
                                     <img src={product.img} className="card-img-top" alt="Product image" />
@@ -94,7 +98,7 @@ export default function Products(props) {
                                         <h5 className="card-title">{product.name}</h5>
                                         <p className="card-text">{product.desc}</p>
                                         <div className={styles.cardflex}>
-                                            {isCart ? cartRemoveElem :
+                                            {(isCart && !isSearch) ? cartRemoveElem :
                                                 status === "authenticated" ?
                                                     (mappedUsers.includes(session?.user?.name) ?
                                                         cartRemoveElem

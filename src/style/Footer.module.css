@@ -1,9 +1,9 @@
+/* Module SASS styling for footer */
 /* @media breakpoint that is similar across multiple sass files */
 .flex .txt {
   transition: all 0.3s ease-in;
 }
 
-/* Module SASS styling for footer */
 @media (max-width: 570px) {
   #sticky {
     padding-top: 15px !important;

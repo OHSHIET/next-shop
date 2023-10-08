@@ -29,7 +29,11 @@ export async function GET(req: Request) {
                     },
                 },
             ],
+            
         },
+        include: {
+            Users: true,
+        }
     })
 
     if(!products.length){
