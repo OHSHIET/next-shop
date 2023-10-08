@@ -19,3 +19,13 @@ Feature only available to the user with name "superuser", is the admin page, whi
 And another feature is a custom sign in page, which also server as sign up.
 
 I did a lot of design for the shop when I started creating it, but in the end I didn't know where all these links should point to, so I just left them, because I wasted time designing them (especially links in the footer, the top ones are from Bootstrap). As I said this project is more for me to learn backend, not to do design.
+
+## Folders
+* `prisma/*` - PostgreSQL model and database
+* `src/*` - all important code of the project
+* `src/app/api/*` - backend API
+* `src/app/<folder>` - pages that later components render
+* `src/app/page.tsx` - main page
+* `src/app/layout.tsx`, `src/app/providers.tsx` - layout for pages
+* `src/components/*` - components that render the actual pages
+* `src/style/*` - SASS design for pages
