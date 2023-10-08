@@ -3,9 +3,9 @@
 #### Video demo: [link](https://www.youtube.com/watch?v=D1nL2I5A-G8)
 
 ## Description
-This is an online shop I made using Next.js, React, PostgreSQL with Prisma, Next Auth, SASS, Bootstrap, and other stuff.
+This is an online shop I made using Next.js, React, PostgreSQL with Prisma, Next Auth, SASS, Bootstrap, and other stuff. 
 
-I made this project to become more familiar with Next, React and databases overall.
+I made this project to become more familiar with Next, React and databases overall. It was a final project for the CS50 Introduction to Computer Science course.
 
 ## Features
 All the products are split into categories, which you can see in the left hand corner of the page. By default "All products" is chosen, so you can see everything you can "buy" - I didn't implement neither the price, nor the buy feature, nor the specific page for every product. First of all, funnily enough, I just forgot about the price, and recalled it only when finishing the project. I thought adding the price and the buy feature would be boring and would just waste my time, since it's writing code for things I already know how to do. The pages for products would be more interesting, however I already did something like this when doing my [Jester messenger project](https://github.com/OHSHIET/jester-messenger).
